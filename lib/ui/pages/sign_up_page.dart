@@ -3,8 +3,8 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,63 +24,54 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
             ),
           ),
-          const SizedBox(height: 30),
+          const SizedBox(
+            height: 30,
+          ),
           Container(
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
               color: whiteColor,
+              borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // NOTE: Email Input
-                const CustomFormField(
-                  title: 'Email Address',
-                ),
-
+                const CustomFormField(title: 'Full Name'),
                 const SizedBox(
                   height: 16,
                 ),
-
-                // NOTE: Password Input
+                const CustomFormField(title: 'Email Address'),
+                const SizedBox(
+                  height: 16,
+                ),
                 const CustomFormField(
                   title: 'Password',
                   obscureText: true,
                 ),
-
-                const SizedBox(height: 8),
-
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
-                  ),
-                ),
-
                 const SizedBox(height: 30),
-
                 CustomFiledButton(
-                  title: 'Sign In',
-                  onPressed: () {},
+                  title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                  },
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 20),
           CustomTextButton(
-            title: 'Create New Account',
+            title: 'Sign In',
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
           ),
+          const SizedBox(height: 40),
         ],
       ),
     );
