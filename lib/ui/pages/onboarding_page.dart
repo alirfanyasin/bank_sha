@@ -34,6 +34,100 @@ class OnBoardingPage extends StatelessWidget {
                 enableInfiniteScroll: false,
               ),
             ),
+            const SizedBox(height: 80),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 24,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 22,
+                vertical: 24,
+              ),
+              decoration: BoxDecoration(
+                color: whiteColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Grow Your\nFinancial Today',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 20,
+                      fontWeight: semiBold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 26,
+                  ),
+                  Text(
+                    'Our system is helping you to\nachieve a better goal',
+                    style: greyTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: regular,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: blueColor,
+                        ),
+                      ),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: lightGreyColor,
+                        ),
+                      ),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: EdgeInsets.only(right: 10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: lightGreyColor,
+                        ),
+                      ),
+                      const Spacer(),
+                      Container(
+                        width: 150,
+                        height: 50,
+                        child: TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: purpleColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(56),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Center(
+                            child: Text(
+                              'Continue',
+                              style: whiteTextStyle.copyWith(
+                                fontSize: 16,
+                                fontWeight: semiBold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
