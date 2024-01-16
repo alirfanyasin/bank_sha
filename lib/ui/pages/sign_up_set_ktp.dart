@@ -3,8 +3,8 @@ import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignUpSetProfilePage extends StatelessWidget {
-  const SignUpSetProfilePage({super.key});
+class SignUpSetKtpPage extends StatelessWidget {
+  const SignUpSetKtpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SignUpSetProfilePage extends StatelessWidget {
             ),
           ),
           Text(
-            'Join Us to Unlock\nYour Growth',
+            'Verify Your\nAccount',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -41,29 +41,18 @@ class SignUpSetProfilePage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // Container(
-                //   width: 120,
-                //   height: 120,
-                //   decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                //     color: lightBackgroundColor,
-                //   ),
-                //   child: Center(
-                //     child: Image.asset(
-                //       'assets/icon_upload.png',
-                //       width: 32,
-                //       height: 32,
-                //     ),
-                //   ),
-                // ),
                 Container(
                   width: 120,
                   height: 120,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/img_profile.png'),
+                    color: lightBackgroundColor,
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/icon_upload.png',
+                      width: 32,
+                      height: 32,
                     ),
                   ),
                 ),
@@ -71,28 +60,26 @@ class SignUpSetProfilePage extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  'Shayna Hanna',
+                  'Passport/ID Card',
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const CustomFormField(title: 'Set PIN (6 digit number)'),
-                const SizedBox(
-                  height: 16,
-                ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 50),
                 CustomFiledButton(
                   title: 'Continue',
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/sign-up-set-ktp');
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
+          ),
+          const SizedBox(height: 30),
+          CustomTextButton(
+            title: 'Skip for Now',
+            onPressed: () {
+              Navigator.pushNamed(context, '/sign-in');
+            },
           ),
         ],
       ),
