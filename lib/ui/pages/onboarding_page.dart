@@ -105,13 +105,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             CustomFiledButton(
                               title: 'Get Started',
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-up');
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/sign-up',
+                                  (route) => false,
+                                );
+                                // Navigator.pushNamed(context, '/sign-up');
                               },
                             ),
                             CustomTextButton(
                               title: 'Sign In',
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-in');
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/sign-in',
+                                  (route) => false,
+                                );
+                                // Navigator.pushNamed(context, '/sign-in');
                               },
                             )
                           ],
