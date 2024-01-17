@@ -69,7 +69,13 @@ class SignInPage extends StatelessWidget {
 
                 CustomFiledButton(
                   title: 'Sign In',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home',
+                      (route) => false,
+                    );
+                  },
                 ),
               ],
             ),
