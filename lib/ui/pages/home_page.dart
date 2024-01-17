@@ -67,12 +67,30 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: purpleColor,
-        child: Image.asset(
-          'assets/icon_plus.png',
-          width: 24,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   backgroundColor: purpleColor,
+      //   child: Image.asset(
+      //     'assets/icon_plus.png',
+      //     width: 24,
+      //   ),
+      // ),
+      floatingActionButton: ClipOval(
+        child: Material(
+          color: purpleColor,
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+              width: 56,
+              height: 56,
+              padding: const EdgeInsets.all(16),
+              child: Image.asset(
+                'assets/icon_plus.png',
+                width: 24,
+                height: 24,
+              ),
+            ),
+          ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
