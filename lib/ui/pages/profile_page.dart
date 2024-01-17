@@ -1,4 +1,6 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
+import 'package:bank_sha/ui/widgets/profile_menu_item.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -7,30 +9,19 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: lightBackgroundColor,
       appBar: AppBar(
-        backgroundColor: lightBackgroundColor,
-        elevation: 0,
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: blackColor,
-        ),
-        title: Text(
+        title: const Text(
           'My Profile',
-          style: blackTextStyle.copyWith(
-            fontSize: 20,
-            fontWeight: semiBold,
-          ),
         ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
-            padding: const EdgeInsets.all(30),
+            padding: const EdgeInsets.only(right: 30, left: 30, top: 30),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
@@ -73,10 +64,49 @@ class ProfilePage extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: medium,
                   ),
-                )
+                ),
+                const SizedBox(height: 40),
+                Column(
+                  children: [
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_edit_profile.png',
+                      title: 'Edit Profile',
+                      onTap: () {
+                        Navigator.pushNamed(context, '/pin');
+                      },
+                    ),
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_my_pin.png',
+                      title: 'My PIN',
+                      onTap: () {},
+                    ),
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_wallet_settings.png',
+                      title: 'Wallet Settings',
+                      onTap: () {},
+                    ),
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_my_rewards.png',
+                      title: 'My Rewards',
+                      onTap: () {},
+                    ),
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_help_center.png',
+                      title: 'Help Center',
+                      onTap: () {},
+                    ),
+                    ProfileMenuItem(
+                      iconUrl: 'assets/icon_logout.png',
+                      title: 'Logout',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
               ],
             ),
-          )
+          ),
+          const SizedBox(height: 25),
+          const CustomTextButton(title: 'Report a Problem'),
         ],
       ),
     );
