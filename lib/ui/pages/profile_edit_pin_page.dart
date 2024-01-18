@@ -36,7 +36,11 @@ class ProfileEditPinPage extends StatelessWidget {
                 const SizedBox(height: 30),
                 CustomFiledButton(
                   title: 'Update Now',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/profile-edit-success', (route) => false);
+                    // Navigator.pushNamed(context, '/profile-edit-success');
+                  },
                 ),
               ],
             ),
