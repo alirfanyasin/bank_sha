@@ -5,22 +5,23 @@ import 'package:url_launcher/url_launcher.dart';
 class HomeTipsItem extends StatelessWidget {
   final String imgUrl;
   final String title;
-  final String url;
+  final String link;
 
   const HomeTipsItem({
     super.key,
     required this.imgUrl,
     required this.title,
-    required this.url,
+    required this.link,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        // if (await canLaunchUrl('https://google.com')) {
-        //   launchUrl('https://googel.com');
-        // }
+        launchUrl(
+          Uri.parse(link),
+          mode: LaunchMode.inAppWebView,
+        );
       },
       child: Container(
         width: 155,
