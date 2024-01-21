@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class CustomFormField extends StatelessWidget {
   final String title;
   final bool obscureText;
+  final bool isShowTitle;
 
   const CustomFormField({
     super.key,
     required this.title,
     this.obscureText = false,
+    this.isShowTitle = true,
   });
 
   @override
@@ -16,16 +18,18 @@ class CustomFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: blackTextStyle.copyWith(
-            fontSize: 14,
-            fontWeight: regular,
+        if (isShowTitle)
+          Text(
+            title,
+            style: blackTextStyle.copyWith(
+              fontSize: 14,
+              fontWeight: regular,
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
+        if (isShowTitle)
+          const SizedBox(
+            height: 8,
+          ),
         TextFormField(
           obscureText: obscureText,
           style: blackTextStyle,
@@ -33,6 +37,7 @@ class CustomFormField extends StatelessWidget {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
             ),
+            hintText: !isShowTitle ? title : null,
             contentPadding: const EdgeInsets.all(12),
           ),
         ),
