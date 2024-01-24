@@ -1,4 +1,5 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/data_package_item.dart';
 import 'package:flutter/material.dart';
 
@@ -53,28 +54,34 @@ class DataPackagePage extends StatelessWidget {
             runSpacing: 25,
             children: [
               DataPackageItem(
-                package: '10GB',
-                price: '218.000',
+                package: 10,
+                price: 218000,
                 onTap: () {},
               ),
               DataPackageItem(
-                package: '25GB',
-                price: '420.000',
+                package: 25,
+                price: 420000,
                 onTap: () {},
               ),
               DataPackageItem(
-                package: '40GB',
-                price: '2.500.000',
+                package: 40,
+                price: 2500000,
                 isSelected: true,
                 onTap: () {},
               ),
               DataPackageItem(
-                package: '99GB',
-                price: '5.000.000',
+                package: 99,
+                price: 5000000,
                 onTap: () {},
               ),
             ],
-          )
+          ),
+          const SizedBox(height: 55),
+          CustomFiledButton(
+            title: 'Continue',
+            onPressed: () {},
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );

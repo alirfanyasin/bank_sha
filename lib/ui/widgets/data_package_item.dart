@@ -1,9 +1,11 @@
+import 'dart:ffi';
+
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class DataPackageItem extends StatelessWidget {
-  final String package;
-  final String price;
+  final int package;
+  final int price;
   final VoidCallback? onTap;
   final bool? isSelected;
 
@@ -30,7 +32,7 @@ class DataPackageItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            package,
+            '${package}GB',
             style: blackTextStyle.copyWith(
               fontSize: 32,
               fontWeight: medium,
