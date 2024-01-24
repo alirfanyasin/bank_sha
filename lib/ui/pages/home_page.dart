@@ -331,7 +331,12 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/icon_more.png',
                 title: 'More',
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const MoreDialog(),
+                  );
+                },
               ),
             ],
           )
@@ -483,6 +488,77 @@ class HomePage extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        padding: const EdgeInsets.all(30),
+        height: 326,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          color: lightBackgroundColor,
+          borderRadius: BorderRadius.circular(40),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More With Us',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semiBold,
+              ),
+            ),
+            const SizedBox(height: 13),
+            Wrap(
+              spacing: 29,
+              runSpacing: 29,
+              children: [
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_data.png',
+                  title: 'Data',
+                  onTap: () {},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_water.png',
+                  title: 'Water',
+                  onTap: () {},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_stream.png',
+                  title: 'Stream',
+                  onTap: () {},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_movie.png',
+                  title: 'Movie',
+                  onTap: () {},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_food.png',
+                  title: 'Food',
+                  onTap: () {},
+                ),
+                HomeServiceItem(
+                  iconUrl: 'assets/icon_travel.png',
+                  title: 'Travel',
+                  onTap: () {},
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
