@@ -1,5 +1,4 @@
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/widgets/bank_item.dart';
 import 'package:bank_sha/ui/widgets/buttons.dart';
 import 'package:bank_sha/ui/widgets/data_provider_item.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +79,12 @@ class DataProviderPage extends StatelessWidget {
             onTap: () {},
           ),
           const SizedBox(height: 100),
-          const CustomFiledButton(title: 'Continue'),
+          CustomFiledButton(
+            title: 'Continue',
+            onPressed: () {
+              Navigator.pushNamed(context, '/data-package');
+            },
+          ),
           const SizedBox(height: 37),
         ],
       ),
